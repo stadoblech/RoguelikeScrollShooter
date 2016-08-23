@@ -32,4 +32,11 @@ public class CameraBoundariesOffset : MonoBehaviour
         rightTopBoundariesPoint.position = cameraPosition + new Vector3((cameraWidth / 2) - boundariesOffsetX,
             (cameraHeight/2) - boundariesOffsetY);
     }
+
+    public static Vector3 getCameraSize()
+    {
+        float cameraHeight = Camera.main.orthographicSize * 2;
+        float cameraWidth = cameraHeight * Camera.main.aspect;
+        return new Vector3(cameraWidth/2,cameraHeight/2);
+    }
 }
